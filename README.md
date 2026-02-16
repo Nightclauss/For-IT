@@ -1,6 +1,6 @@
 # ForIT Challenge
 
-Hola buenas mi nombre es Tiago y en este proyecto puse mucho de mi para poder llevarlo a cabo use cosas que nunca use pero con ayuda de tutoriales y leer para poder conseguir el objetivo la idea fue construir una aplicación simple pero bien estructurada para gestionar tareas, aplicando buenas prácticas tanto en frontend como en backend.
+Hola buenas mi nombre es Tiago y en este proyecto puse mucho de mi para poder llevarlo a cabo la idea fue construir una aplicación simple pero bien estructurada para gestionar tareas, aplicando buenas prácticas tanto en frontend como en backend.
 
 
 ##  ¿Qué hace la aplicación?
