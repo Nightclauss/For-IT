@@ -1,9 +1,10 @@
 const express = require('express');
 const cors = require('cors');
-
+require('dotenv').config();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
 
 app.use(express.json());
 app.use(cors());
@@ -42,28 +43,20 @@ app.post('/api/tasks', (req, res) => {
 
 app.put('/api/tasks/:id', (req, res) => {
   const { id } = req.params;
-  const { title, completed, description } = req.body;
+  const { completed } = req.body;
 
   const task = tasks.find(t => t.id === id);
 
   if (!task) {
-    return res.status(404).json({ error: "Tarea no encontrada" });
+    return res.status(404).json({ message: "Task not found" });
   }
 
-  if (title !== undefined) {
-    task.title = title;
-  }
-
-  if (description !== undefined) {
-    task.description = description;
-  }
-
-  if (completed !== undefined) {
-    task.completed = completed;
-  }
+  task.completed = Boolean(completed); 
 
   res.json(task);
 });
+
+
 
 
 

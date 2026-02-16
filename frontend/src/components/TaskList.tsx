@@ -8,16 +8,34 @@ interface TaskListProps {
 }
 
 function TaskList({ tasks, onToggle, onDelete }: TaskListProps) {
+  const pendingCount = tasks.filter(task => !task.completed).length;
   return (
     <ul>
-      {tasks.map(task => (
-        <TaskItem
-          key={task.id}
-          task={task}
-          onToggle={onToggle} 
-          onDelete={onDelete}   
-        />
-      ))}
+      <>
+  <h2>Pendientes ({pendingCount})</h2>
+  {tasks
+    .filter(task => !task.completed)
+    .map(task => (
+      <TaskItem
+        key={task.id}
+        task={task}
+        onToggle={onToggle}
+        onDelete={onDelete}
+      />
+    ))}
+
+  <h2 style={{ marginTop: "25px" }}>Completadas</h2>
+  {tasks
+    .filter(task => task.completed)
+    .map(task => (
+      <TaskItem
+        key={task.id}
+        task={task}
+        onToggle={onToggle}
+        onDelete={onDelete}
+      />
+    ))}
+</>
     </ul>
   );
 }
