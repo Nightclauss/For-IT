@@ -45,3 +45,9 @@ npm run start
 
 ## Frontend
 npm run dev
+
+## Vista previa
+
+![Vista de la aplicación](./ForIT.png)
+
+![Vista de la aplicación](./ForIT2.png)
